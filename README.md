@@ -38,11 +38,19 @@ pip install -r requirements.txt
 python -m src.train
 python -m src.evaluate --checkpoint models/best.pt --history results/run_history.json
 python -m src.predict some_image.jpg --checkpoint models/best.pt
+python -m pytest -q
 ```
 
 On Colab, choose a GPU runtime (Runtime → Change runtime type), then:
 
 ```python
+!git clone https://github.com/AMaddodi/CNN_Project.git
+%cd CNN_Project/
+%pip install -r requirements.txt
+%python -m src.train
+%python -m src.evaluate --checkpoint models/best.pt --history results/run_history.json
+%python -m src.predict some_image.jpg --checkpoint models/best.pt
+%python -m pytest -q
 
 ```
 
