@@ -1,0 +1,42 @@
+{
+  "test_accuracy": 75.29,
+  "per_class_accuracy": {
+    "plane": 78.6,
+    "car": 89.8,
+    "bird": 56.5,
+    "cat": 48.4,
+    "deer": 72.1,
+    "dog": 65.1,
+    "frog": 90.8,
+    "horse": 80.4,
+    "ship": 86.1,
+    "truck": 85.1
+  },
+  "top_confusions": [
+    {
+      "count": 173,
+      "true": "cat",
+      "predicted": "dog"
+    },
+    {
+      "count": 137,
+      "true": "cat",
+      "predicted": "frog"
+    },
+    {
+      "count": 134,
+      "true": "dog",
+      "predicted": "cat"
+    },
+    {
+      "count": 111,
+      "true": "bird",
+      "predicted": "frog"
+    },
+    {
+      "count": 96,
+      "true": "bird",
+      "predicted": "deer"
+    }
+  ]
+}
