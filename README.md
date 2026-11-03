@@ -42,6 +42,7 @@ python -m pytest -q
 ```
 
 On Colab, choose a GPU runtime (Runtime → Change runtime type), then:
+As colab runs on virtual machines no need to create virtual environment.
 
 ```python
 !git clone https://github.com/AMaddodi/CNN_Project.git
