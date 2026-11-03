@@ -39,25 +39,16 @@ def build_optimiser(cfg, model):
 def read_config():
     config = configparser.ConfigParser()
     config.read("configs/config.ini")
-    cfg = {
-        'seed': config.getint('general','seed'),
-        'data_root': config.get('general','data_root'),
-        'batch_size':config.getint('general','batch_size'),
-        'val_size': config.getint('general','val_size'),
-        'augment': config.getboolean('general','augment'),
-        'num_workers': config.getint('general','num_workers'),
-        'epochs': config.getint('training','epochs'),
-        'optimizer': config.get('training','optimizer'),
-        'lr': config.getfloat('training','lr'),
-        'weight_decay': config.getfloat('training','weight_decay'),
-        'scheduler': config.get('training', 'scheduler'),
-        'output_dir': config.get('training', 'output_dir'),
-        'checkpoint': config.get('training', 'checkpoint')
-    }
-    cfg['model'] = {
-        'p_drop': config.getfloat('model', 'p_drop'),
-        'hidden': config.getint('model', 'hidden')
-    }
+    cfg = {'seed': config.getint('general', 'seed'), 'data_root': config.get('general', 'data_root'),
+           'batch_size': config.getint('general', 'batch_size'), 'val_size': config.getint('general', 'val_size'),
+           'augment': config.getboolean('general', 'augment'), 'num_workers': config.getint('general', 'num_workers'),
+           'epochs': config.getint('training', 'epochs'), 'optimizer': config.get('training', 'optimizer'),
+           'lr': config.getfloat('training', 'lr'), 'weight_decay': config.getfloat('training', 'weight_decay'),
+           'scheduler': config.get('training', 'scheduler'), 'output_dir': config.get('training', 'output_dir'),
+           'checkpoint': config.get('training', 'checkpoint'), 'model': {
+            'p_drop': config.getfloat('model', 'p_drop'),
+            'hidden': config.getint('model', 'hidden')
+        }}
     return cfg
 
 def main():
