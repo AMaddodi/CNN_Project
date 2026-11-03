@@ -16,6 +16,7 @@ def set_seed(seed: int):
     np.random.seed(seed)
     torch.random.seed()
     torch.cuda.manual_seed_all(seed)
+    
 
 @torch.no_grad()
 def evaluate_loader(model, loader, criterion, device):
@@ -29,12 +30,14 @@ def evaluate_loader(model, loader, criterion, device):
         total += lable.size(0)
     return loss_sum / total, 100.0 * correct / total
 
+
 def build_optimiser(cfg, model):
     if cfg["optimizer"]  == 'sgd':
         return torch.optim.SGD(model.parameters(), lr = cfg['lr'], momentum=0.9,
                                weight_decay=cfg['weight_decay'], nesterov=True)
     return torch.optim.AdamW(model.parameters(), lr = cfg['lr'],
                              weight_decay=cfg['weight_decay'])
+
 
 def read_config():
     config = configparser.ConfigParser()
@@ -50,6 +53,7 @@ def read_config():
             'hidden': config.getint('model', 'hidden')
         }}
     return cfg
+
 
 def main():
     ap = argparse.ArgumentParser()
